@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root maxHeight="398.0" maxWidth="456.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;" type="AnchorPane" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RentController">
+   <children>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="103.0" layoutY="91.0" prefHeight="21.0" prefWidth="249.0" text="Rent Your Vehcile">
+         <font>
+            <Font name="Book Antiqua Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="vanbtn" layoutX="340.0" layoutY="236.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="69.0" style="-fx-background-color: #1c236b;" text="Van" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="bikebtn" layoutX="197.0" layoutY="236.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="69.0" style="-fx-background-color: #1c236b;" text="Bike" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="carbtn" layoutX="47.0" layoutY="236.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="69.0" style="-fx-background-color: #1c236b;" text="Car" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Line endX="74.0" layoutX="318.0" layoutY="134.0" startX="-254.66665649414062" stroke="#bcb4b4" />
+      <ImageView fitHeight="80.0" fitWidth="69.0" layoutX="6.0" layoutY="-15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Resources/Icons/icon2.png" />
+         </image>
+      </ImageView>
+   </children>
+</fx:root>

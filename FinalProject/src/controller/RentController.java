@@ -8,17 +8,21 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
  *
  * @author Mahmoud Ehab
  */
-public class MainController implements Initializable {
+public class RentController implements Initializable {
 
-    @FXML private TextField name;
-    @FXML private TextField password;
+    @FXML
+    private Button vanbtn;
+    @FXML
+    private Button bikebtn;
+    @FXML
+    private Button carbtn;
 
     /**
      * Initializes the controller class.
