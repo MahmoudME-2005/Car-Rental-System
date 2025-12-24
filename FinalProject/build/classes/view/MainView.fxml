@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController">
+    <center>
+        <VBox spacing="10" alignment="CENTER">
+            <Label text="Vehicle Rental System" />
+            <TableView fx:id="tableView">
+                <columns>
+                    <TableColumn fx:id="idCol" text="ID" />
+                    <TableColumn fx:id="brandCol" text="Brand" />
+                    <TableColumn fx:id="priceCol" text="Price/Day" />
+                    <TableColumn fx:id="statusCol" text="Available" />
+                </columns>
+            </TableView>
+            <Button text="Rent Vehicle" onAction="#rentVehicle" />
+            <Button text="Return Vehicle" onAction="#returnVehicle" />
+        </VBox>
+    </center>
+</BorderPane>
