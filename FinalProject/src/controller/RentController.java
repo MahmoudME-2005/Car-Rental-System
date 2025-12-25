@@ -4,7 +4,11 @@
  */
 package controller;
 
+import DataBase.BookingDataBase;
 import DataBase.CustomerDataBase;
+import DataBase.VehicleDataBase;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -27,7 +31,7 @@ import model.VehicleNotAvailableException;
  *
  * @author Mahmoud Ehab
  */
-public class RentController extends AdminController {
+public class RentController extends SceneController {
 
     @FXML
     private TableView<Vehicle> vehiclesTable;
@@ -76,6 +80,10 @@ public class RentController extends AdminController {
     
     @FXML
     private Button backButton1;
+    
+    private final ObservableList<Vehicle> vehicles = FXCollections.observableList(VehicleDataBase.getVehicles());
+    
+    private final ObservableList<Booking> bookings = FXCollections.observableList(BookingDataBase.getActiveUserBookings());
 
     /**
      * Initializes the controller class.

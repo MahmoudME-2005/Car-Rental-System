@@ -40,6 +40,10 @@ public class CustomerDataBase {
         return null;
     }
     
+    private static boolean exists(String username) {
+        return (findByUsername(username) != null);
+    }
+    
     public static List<Customer> getCustomers()
     {
         return customers;
@@ -51,9 +55,5 @@ public class CustomerDataBase {
 
     public static void setActiveUser(Customer activeUser) {
         CustomerDataBase.activeUser = activeUser;
-    }
-    
-    private static boolean exists(String username) {
-        return (findByUsername(username) != null);
     }
 }

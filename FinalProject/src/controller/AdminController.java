@@ -13,6 +13,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import DataBase.CustomerDataBase;
 import DataBase.AdminDataBase;
+import DataBase.BookingDataBase;
+import DataBase.VehicleDataBase;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
@@ -21,13 +23,13 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import model.Admin;
-import model.Bike;
 import model.Vehicle;
 import model.Booking;
-import model.Car;
 import model.Customer;
-import model.Van;
-import model.VehicleNotAvailableException;
+import model.Car;
+//import model.Bike;
+//import model.Van;
+//import model.VehicleNotAvailableException;
 
 
 /**
@@ -94,9 +96,9 @@ public class AdminController extends SceneController {
 
     @FXML private Button backButton;
     
-    protected final ObservableList<Vehicle> vehicles = FXCollections.observableArrayList();
+    private final ObservableList<Vehicle> vehicles = FXCollections.observableList(VehicleDataBase.getVehicles());
     
-    protected final ObservableList<Booking> bookings = FXCollections.observableArrayList();
+    private final ObservableList<Booking> bookings = FXCollections.observableList(BookingDataBase.getBookings());
     
     private final ObservableList<Customer> customers = FXCollections.observableList(CustomerDataBase.getCustomers());
     
@@ -125,23 +127,6 @@ public class AdminController extends SceneController {
         customersCol.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getUserName()));
         
         adminsCol.setCellValueFactory(data -> new javafx.beans.property.SimpleStringProperty(data.getValue().getUserName()));
-        
-        vehicles.addAll(
-            new Car("Toyota", 50),
-            new Bike("Yamaha", 20),
-            new Van("Ford", 80)
-        );
-        try
-        {
-            bookings.addAll(
-                    new Booking(CustomerDataBase.getCustomers().get(0), vehicles.get(0), 5),
-                    new Booking(CustomerDataBase.getCustomers().get(1), vehicles.get(1), 7)
-            );
-        }
-        catch (VehicleNotAvailableException ex)
-        {
-            System.out.println(ex.getMessage());
-        }
         
         vehiclesTable.setItems(vehicles);
         
