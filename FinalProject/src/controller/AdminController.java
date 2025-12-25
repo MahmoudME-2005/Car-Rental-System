@@ -202,6 +202,8 @@ public class AdminController extends SceneController {
     @FXML
     private void removeBooking() {
         Booking removedBooking = bookingsTable.getSelectionModel().getSelectedItem();
+        removedBooking.getVehicle().returnVehicle();
+        vehiclesTable.refresh();
         bookings.remove(removedBooking);
     }
     

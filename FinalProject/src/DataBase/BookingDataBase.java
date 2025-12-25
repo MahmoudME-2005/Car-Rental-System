@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.scene.control.Alert;
 import model.Booking;
+import model.Vehicle;
 import model.VehicleNotAvailableException;
 /**
  *

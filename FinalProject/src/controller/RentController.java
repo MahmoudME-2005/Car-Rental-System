@@ -123,56 +123,103 @@ public class RentController extends SceneController {
     
     public void rentVehicle()
     {
+//        Vehicle rentedVehicle = vehiclesTable.getSelectionModel().getSelectedItem();
+//        try
+//        {
+//            rentedVehicle.rent();
+//            TextField numberOfDays = new TextField();
+//
+//            numberOfDays.setPromptText("Number Of Days:");
+//
+//            VBox content = new VBox(10, new Label("Brand:"), numberOfDays);
+//
+//            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+//            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+//            stage.getIcons().add(new Image(getClass().getResourceAsStream("/Resources/Icons/icon.png")));
+//            alert.setTitle("Rent vehicle");
+//            alert.setHeaderText("For how many days?");
+//            alert.getDialogPane().setContent(content);
+//
+//            alert.showAndWait().ifPresent(result -> {
+//                if (result == ButtonType.OK) {
+//                    try
+//                    {
+//                        int days = Integer.parseInt(numberOfDays.getText());
+//                        bookings.add(new Booking (CustomerDataBase.getActiveUser(), rentedVehicle, days));
+//                    }
+//                    catch (VehicleNotAvailableException ex)
+//                    {
+//                        System.out.println("Vehicle Not Available");
+//                    }
+//                }
+//            });
+//        }
+//        catch (VehicleNotAvailableException ex)
+//        {
+//            Alert alert = new Alert(Alert.AlertType.ERROR);
+//            alert.setTitle("Error Occurred");
+//            alert.setHeaderText(null); // Setting this to null makes it look cleaner
+//            alert.setContentText(ex.getMessage());
+//            alert.showAndWait();
+//        }
         Vehicle rentedVehicle = vehiclesTable.getSelectionModel().getSelectedItem();
-        try
-        {
-            rentedVehicle.rent();
-            TextField numberOfDays = new TextField();
+        TextField numberOfDaysField = new TextField();
 
-            numberOfDays.setPromptText("Number Of Days:");
+        numberOfDaysField.setPromptText("Number of days:");
 
-            VBox content = new VBox(10, new Label("Brand:"), numberOfDays);
+        VBox content = new VBox(10, new Label("Number of days"), numberOfDaysField);
 
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image(getClass().getResourceAsStream("/Resources/Icons/icon.png")));
-            alert.setTitle("Rent vehicle");
-            alert.setHeaderText("For how many days?");
-            alert.getDialogPane().setContent(content);
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("/Resources/Icons/icon.png")));
+        alert.setTitle("Rent Vehicle");
+        alert.setHeaderText("For how long?");
+        alert.getDialogPane().setContent(content);
 
-            alert.showAndWait().ifPresent(result -> {
-                if (result == ButtonType.OK) {
-                    try
-                    {
-                        int days = Integer.parseInt(numberOfDays.getText());
-                        bookings.add(new Booking (CustomerDataBase.getActiveUser(), rentedVehicle, days));
-                    }
-                    catch (VehicleNotAvailableException ex)
-                    {
-                        System.out.println("Vehicle Not Available");
-                    }
+        alert.showAndWait().ifPresent(result -> {
+            if (result == ButtonType.OK) {
+                String numberOfDays = numberOfDaysField.getText();
+                int days = Integer.parseInt(numberOfDays);
+                try
+                {
+                    Booking toAdd = new Booking(CustomerDataBase.getActiveUser(), rentedVehicle, days);
+                    bookings.add(toAdd);
+                    BookingDataBase.getBookings().add(toAdd);
+                    vehiclesTable.refresh();
                 }
-            });
-        }
-        catch (VehicleNotAvailableException ex)
-        {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error Occurred");
-            alert.setHeaderText(null); // Setting this to null makes it look cleaner
-            alert.setContentText(ex.getMessage());
-            alert.showAndWait();
-        }
+                catch (VehicleNotAvailableException ex)
+                {
+                    Alert alert1 = new Alert(Alert.AlertType.ERROR);
+                    alert1.setTitle("Error Occurred");
+                    alert1.setHeaderText(null); // Setting this to null makes it look cleaner
+                    alert1.setContentText(ex.getMessage());
+                    alert1.showAndWait();
+                }
+            }
+        });
+        
     }
     
     public void returnVehicle()
     {
         Vehicle returnedVehicle = vehiclesTable.getSelectionModel().getSelectedItem();
         returnedVehicle.returnVehicle();
+        vehiclesTable.refresh();
+        for (Booking b : bookings)
+        {
+            if (b.getVehicle().equals(returnedVehicle))
+            {
+                bookings.remove(b);
+            }
+        }
     }
     
     public void cancelBooking()
     {
-        
+        Booking removedBooking = bookingsTable.getSelectionModel().getSelectedItem();
+        removedBooking.getVehicle().returnVehicle();
+        vehiclesTable.refresh();
+        bookings.remove(removedBooking);
     }
     
     public void handleBack()
