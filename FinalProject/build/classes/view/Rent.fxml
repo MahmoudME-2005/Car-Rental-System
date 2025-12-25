@@ -11,63 +11,64 @@
 
 <AnchorPane maxHeight="398.0" maxWidth="456.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="456.0" style="-fx-background-color: #1c236b;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="167.0" layoutY="14.0" text="Vehcile Rental System" textFill="WHITE">
+      <Label layoutX="118.0" layoutY="5.0" text="Vehcile Rental System-Admin Page" textFill="WHITE">
          <font>
             <Font name="Book Antiqua" size="14.0" />
          </font>
       </Label>
-      <TabPane layoutY="54.0" prefHeight="289.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab text="Vehciles">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <TabPane fx:id="tabPane" layoutY="54.0" prefHeight="289.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Vehciles">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView layoutX="1.0" layoutY="-3.0" prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
-                          <columns>
-                            <TableColumn prefWidth="114.0" text="ID" />
-                            <TableColumn prefWidth="114.0" text="Brand" />
-                              <TableColumn prefWidth="114.0" text="Price/Day" />
-                              <TableColumn prefWidth="114.0" text="Avaliability" />
-                          </columns>
+                        <TableView fx:id="vehiclesTable" layoutX="1.0" layoutY="-3.0" prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
+                           <columns>
+                              <TableColumn fx:id="vehicleIdCol" prefWidth="114.0" text="ID" />
+                              <TableColumn fx:id="vehicleBrandCol" prefWidth="114.0" text="Brand" />
+                              <TableColumn fx:id="vehiclePriceCol" prefWidth="114.0" text="Price/Day" />
+                              <TableColumn fx:id="vehicleAvailabilityCol" prefWidth="114.0" text="Avaliability" />
+                           </columns>
                         </TableView>
-                        <Button layoutX="137.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="58.0" style="-fx-background-color: #1c236b;" text="Return" textFill="WHITE">
+                        <Button fx:id="removeVehicleButton" layoutX="265.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="66.0" style="-fx-background-color: #1c236b;" text="Return" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="264.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="58.0" style="-fx-background-color: #1c236b;" text="Rent" textFill="WHITE">
+                        <Button fx:id="addVehicleButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #1c236b;" text="Rent" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
-            </content>
-          </Tab>
-          <Tab text="Booking">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               </content>
+            </Tab>
+            <Tab text="Booking">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
-                          <columns>
-                            <TableColumn prefWidth="114.0" text="ID" />
-                            <TableColumn prefWidth="114.0" text="Brand" />
-                              <TableColumn prefWidth="114.0" text="Num of Days" />
-                              <TableColumn prefWidth="114.0" text="Total price" />
-                          </columns>
+                        <TableView fx:id="bookingsTable" prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
+                           <columns>
+                              <TableColumn fx:id="bookingIdCol" prefWidth="91.2" text="ID" />
+                              <TableColumn fx:id="bookingCustomerCol" prefWidth="91.2" text="Customer" />
+                              <TableColumn fx:id="bookingBrandCol" prefWidth="91.2" text="Brand" />
+                              <TableColumn fx:id="bookingDaysCol" prefWidth="91.2" text="Num of Days" />
+                              <TableColumn fx:id="bookingTotalPriceCol" prefWidth="91.2" text="Total price" />
+                           </columns>
                         </TableView>
-                        <Button layoutX="199.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="58.0" style="-fx-background-color: #1c236b;" text="Cancel" textFill="WHITE">
+                        <Button fx:id="removeBookingButton" layoutX="195.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Cancel" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
                      </children>
                   </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
+               </content>
+            </Tab>
+         </tabs>
       </TabPane>
-      <Button layoutX="34.0" layoutY="358.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="57.0" style="-fx-background-color: #e1e4ff;" text="Back">
+      <Button fx:id="backButton1" layoutX="34.0" layoutY="358.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="57.0" style="-fx-background-color: #e1e4ff;" text="Back">
          <font>
             <Font name="Book Antiqua" size="13.0" />
          </font>

@@ -12,7 +12,8 @@ import java.util.List;
  * @author Mahmoud Ehab
  */
 public class CustomerDataBase {
-    public static final List<Customer> customers = new ArrayList<>();
+    private static final List<Customer> customers = new ArrayList<>();
+    public static Customer activeUser = null;
     
     static {
         customers.add(new Customer("mahmoud", "securePass"));
@@ -37,6 +38,11 @@ public class CustomerDataBase {
             }
         }
         return null;
+    }
+    
+    public static List<Customer> getCustomers()
+    {
+        return customers;
     }
     
     private static boolean exists(String username) {

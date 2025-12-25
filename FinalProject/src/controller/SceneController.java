@@ -28,7 +28,11 @@ public class SceneController {
         }
         catch (IOException ex)
         {
-            System.out.println("The Page doesn't exist");
+            System.out.println("The page doesn't exist");
+        }
+        catch (Exception ex)
+        {
+            System.out.println("The page doesn't exist");
         }
 
         // 3. Create the new scene and set it on the stage

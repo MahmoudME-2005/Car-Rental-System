@@ -9,13 +9,14 @@ package model;
  * @author Mahmoud Ehab
  */
 public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
+    protected static int numberOfVehicles = 0;
     protected String id;
     protected String brand;
     protected double pricePerDay;
     protected boolean available = true;
     
-    public Vehicle(String id, String brand, double pricePerDay) {
-        this.id = id;
+    public Vehicle(String brand, double pricePerDay) {
+        this.id = Integer.toString(++numberOfVehicles);
         this.brand = brand;
         this.pricePerDay = pricePerDay;
     }
@@ -53,6 +54,19 @@ public abstract class Vehicle implements Rentable, Comparable<Vehicle> {
     
     public double getPricePerDay() {
         return pricePerDay;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public void setPricePerDay(double pricePerDay) {
+        this.pricePerDay = pricePerDay;
+    }
+
+    public void changeAvail()
+    {
+        this.available = !this.available;
     }
     
     @Override

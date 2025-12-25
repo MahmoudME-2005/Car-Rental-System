@@ -9,7 +9,7 @@ package model;
  * @author Mahmoud Ehab
  */
 public class Bike extends Vehicle {
-    public Bike(String id, String brand, double pricePerDay) {
-        super(id, brand, pricePerDay);
+    public Bike(String brand, double pricePerDay) {
+        super(brand, pricePerDay);
     }
 }

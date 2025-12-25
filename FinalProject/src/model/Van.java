@@ -9,7 +9,7 @@ package model;
  * @author Mahmoud Ehab
  */
 public class Van extends Vehicle {
-    public Van(String id, String brand, double pricePerDay) {
-        super(id, brand, pricePerDay);
+    public Van(String brand, double pricePerDay) {
+        super(brand, pricePerDay);
     }
 }

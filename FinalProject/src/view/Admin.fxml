@@ -62,12 +62,7 @@
                               <TableColumn fx:id="bookingTotalPriceCol" prefWidth="91.2" text="Total price" />
                            </columns>
                         </TableView>
-                        <Button fx:id="removeBookingButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
-                           <font>
-                              <Font name="Book Antiqua" size="13.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="addBookingButton" layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Add" textFill="WHITE">
+                        <Button fx:id="removeBookingButton" layoutX="195.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
@@ -80,17 +75,17 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="456.0">
                      <children>
-                        <TableView prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
+                        <TableView fx:id="customersTable" prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
                           <columns>
-                            <TableColumn prefWidth="456.0" text="Usernames" />
+                            <TableColumn fx:id="customersCol" prefWidth="456.0" text="Usernames" />
                           </columns>
                         </TableView>
-                        <Button layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
+                        <Button fx:id="removeCustomerButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Add" textFill="WHITE">
+                        <Button fx:id="addCustomerButton" layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Add" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
@@ -103,17 +98,17 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
+                        <TableView fx:id="adminsTable" prefHeight="205.0" prefWidth="456.0" style="-fx-background-color: #e1e4ff;">
                           <columns>
-                            <TableColumn prefWidth="456.0" text="Usernames" />
+                            <TableColumn fx:id="adminsCol" prefWidth="456.0" text="Usernames" />
                           </columns>
                         </TableView>
-                        <Button layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
+                        <Button fx:id="removerAdminButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Remove" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
-                        <Button layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Add" textFill="WHITE">
+                        <Button fx:id="addAdminButton" layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Add" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>

@@ -9,13 +9,14 @@ package model;
  * @author Mahmoud Ehab
  */
 public class Booking {
+    private static int numberOfBookings = 0;
     private String id;
     private Customer customer;
     private Vehicle vehicle;
     private int days;
     
-    public Booking(String id, Customer customer, Vehicle vehicle, int days) throws VehicleNotAvailableException {
-        this.id = id;
+    public Booking(Customer customer, Vehicle vehicle, int days) throws VehicleNotAvailableException {
+        this.id = Integer.toString(++numberOfBookings);
         this.customer = customer;
         this.vehicle = vehicle;
         this.vehicle.rent();
@@ -40,10 +41,6 @@ public class Booking {
     public int getDays()
     {
         return this.days;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public void setCustomer(Customer customer) {

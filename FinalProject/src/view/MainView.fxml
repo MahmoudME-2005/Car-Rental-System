@@ -44,6 +44,6 @@
       <Line endX="100.0" layoutX="325.0" layoutY="143.0" startX="-100.0" stroke="#bcb4b4" />
       <PasswordField fx:id="password" layoutX="241.0" layoutY="241.0" prefHeight="25.0" prefWidth="177.0" />
       <Button fx:id="Register" layoutX="295.0" layoutY="301.0" mnemonicParsing="false" style="-fx-background-color: #1c236b;" text="Register" textFill="WHITE" />
-      <Label fx:id="stateLabel" alignment="CENTER" layoutX="241.0" layoutY="273.0" prefHeight="17.0" prefWidth="177.0" text="Mahmoud" visible="true" />
+      <Label fx:id="stateLabel" alignment="CENTER" layoutX="241.0" layoutY="273.0" prefHeight="17.0" prefWidth="177.0" text="Mahmoud Gamed" visible="true" />
    </children>
 </AnchorPane>

@@ -29,4 +29,9 @@ public abstract class AdminDataBase {
         }
         return null;
     }
+    
+    public static List<Admin> getAdmins()
+    {
+        return admins;
+    }
 }

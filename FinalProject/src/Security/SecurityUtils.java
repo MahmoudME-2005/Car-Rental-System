@@ -34,7 +34,15 @@ public class SecurityUtils {
         Customer tryingToLogin = CustomerDataBase.findByUsername(username);
         if (tryingToLogin != null)
         {
-            return tryingToLogin.getHashedPassword().equals(hash(password));
+            if(tryingToLogin.getHashedPassword().equals(hash(password)))
+            {
+                CustomerDataBase.activeUser = tryingToLogin;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         else
         {

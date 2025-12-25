@@ -8,10 +8,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import DataBase.CustomerDataBase;
 import Security.SecurityUtils;
-import java.io.IOException;
 import model.Customer; //temp
+//import java.io.IOException;
 /**
  * FXML Controller class
  *
@@ -53,7 +52,7 @@ public class MainController extends SceneController {
             stateLabel.setVisible(true);
         }
         
-        for (Customer c: DataBase.CustomerDataBase.customers)
+        for (Customer c: DataBase.CustomerDataBase.getCustomers())
         {
             System.out.println(c.getUserName());
         }
