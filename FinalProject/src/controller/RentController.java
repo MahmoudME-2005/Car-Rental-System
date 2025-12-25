@@ -137,7 +137,7 @@ public class RentController extends AdminController {
                     try
                     {
                         int days = Integer.parseInt(numberOfDays.getText());
-                        bookings.add(new Booking (CustomerDataBase.activeUser, rentedVehicle, days));
+                        bookings.add(new Booking (CustomerDataBase.getActiveUser(), rentedVehicle, days));
                     }
                     catch (VehicleNotAvailableException ex)
                     {

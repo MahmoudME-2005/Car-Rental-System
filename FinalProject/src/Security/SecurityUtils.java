@@ -36,7 +36,7 @@ public class SecurityUtils {
         {
             if(tryingToLogin.getHashedPassword().equals(hash(password)))
             {
-                CustomerDataBase.activeUser = tryingToLogin;
+                CustomerDataBase.setActiveUser(tryingToLogin);
                 return true;
             }
             else
