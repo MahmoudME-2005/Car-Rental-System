@@ -4,10 +4,7 @@
  */
 package controller;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 
 /**
@@ -15,7 +12,7 @@ import javafx.scene.control.Button;
  *
  * @author Mahmoud Ehab
  */
-public class RentController implements Initializable {
+public class RentController {
 
     @FXML
     private Button vanbtn;
@@ -27,9 +24,25 @@ public class RentController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+    @FXML
+    public void initialize() {
+        vanbtn.setOnAction(e -> rentVan());
+        bikebtn.setOnAction(e -> rentBike());
+        carbtn.setOnAction(e -> rentCar());
     }    
     
+    private void rentCar()
+    {
+        System.out.println("Rented a Car");
+    }
+    
+    private void rentVan()
+    {
+        System.out.println("Rented a Van");
+    }
+    
+    private void rentBike()
+    {
+        System.out.println("Rented a Bike");
+    }
 }

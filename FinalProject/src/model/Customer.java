@@ -10,7 +10,7 @@ package model;
  */
 public class Customer extends User {
     
-    public Customer(String name, String username, String password) {
-        super(name, username, password);
+    public Customer(String username, String password) {
+        super(username, password);
     }
 }

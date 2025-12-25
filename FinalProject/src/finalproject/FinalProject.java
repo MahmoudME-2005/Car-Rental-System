@@ -8,7 +8,10 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.scene.image.Image;
 import javafx.fxml.FXMLLoader;
+import controller.SceneController;
+
 
 /**
  *
@@ -18,10 +21,11 @@ public class FinalProject extends Application {
     
     @Override
     public void start(Stage primaryStage) throws IOException {
-        
+        SceneController.setStage(primaryStage);
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/MainView.fxml"));
         primaryStage.setScene(new Scene(loader.load()));
         primaryStage.setTitle("Vehicle Rental System");
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/Resources/Icons/icon2.png")));
         primaryStage.show();
     }
 

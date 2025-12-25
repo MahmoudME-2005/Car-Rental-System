@@ -2,16 +2,46 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package model;
+package Security;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.nio.charset.StandardCharsets;
+import DataBase.AdminDataBase;
+import DataBase.CustomerDataBase;
+import model.Admin;
+import model.Customer;
 /**
  *
  * @author Mahmoud Ehab
  */
 public class SecurityUtils {
+    public static boolean authenticateAdmin(String username, String password)
+    {
+        Admin tryingToLogin = AdminDataBase.findByUsername(username);
+        if (tryingToLogin != null)
+        {
+            return tryingToLogin.getHashedPassword().equals(hash(password));
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
+    public static boolean authenticateCustomer(String username, String password)
+    {
+        Customer tryingToLogin = CustomerDataBase.findByUsername(username);
+        if (tryingToLogin != null)
+        {
+            return tryingToLogin.getHashedPassword().equals(hash(password));
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
     public static String hash(String originalPassword) {
         try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");

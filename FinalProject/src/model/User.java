@@ -4,24 +4,20 @@
  */
 package model;
 
+import Security.SecurityUtils;
+
 /**
  *
  * @author Mahmoud Ehab
  */
 public abstract class User {
-    protected String name;
     protected String username;
     protected String password;
     
-    protected User(String name, String username, String password)
+    protected User(String username, String password)
     {
-        this.name = name;
         this.username = username;
         this.password = SecurityUtils.hash(password);
-    }
-    
-    public String getName() {
-        return this.name;
     }
     
     public String getUserName()
@@ -37,5 +33,10 @@ public abstract class User {
     public void setPassword(String password)
     {
         this.password = SecurityUtils.hash(password);
+    }
+    
+    public String getHashedPassword()
+    {
+        return this.password;
     }
 }

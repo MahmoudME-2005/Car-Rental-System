@@ -9,8 +9,8 @@ package model;
  * @author Mahmoud Ehab
  */
 public class Admin extends User {
-    public Admin(String name, String username, String password)
+    public Admin(String username, String password)
     {
-        super(name, username, password);
+        super(username, password);
     }
 }
