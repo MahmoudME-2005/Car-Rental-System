@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="398.0" maxWidth="456.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="456.0" style="-fx-background-color: #1c236b;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="398.0" maxWidth="456.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="456.0" style="-fx-background-color: #1c236b;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.RentController">
    <children>
       <Label layoutX="118.0" layoutY="5.0" text="Vehcile Rental System-Admin Page" textFill="WHITE">
          <font>
@@ -30,12 +30,12 @@
                               <TableColumn fx:id="vehicleAvailabilityCol" prefWidth="114.0" text="Avaliability" />
                            </columns>
                         </TableView>
-                        <Button fx:id="removeVehicleButton" layoutX="265.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="66.0" style="-fx-background-color: #1c236b;" text="Return" textFill="WHITE">
+                        <Button fx:id="returnVehicleButton" layoutX="263.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="66.0" style="-fx-background-color: #1c236b;" text="Return" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
                         </Button>
-                        <Button fx:id="addVehicleButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #1c236b;" text="Rent" textFill="WHITE">
+                        <Button fx:id="rentVehicleButton" layoutX="125.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="68.0" style="-fx-background-color: #1c236b;" text="Rent" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
@@ -57,7 +57,7 @@
                               <TableColumn fx:id="bookingTotalPriceCol" prefWidth="91.2" text="Total price" />
                            </columns>
                         </TableView>
-                        <Button fx:id="removeBookingButton" layoutX="195.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Cancel" textFill="WHITE">
+                        <Button fx:id="cancelBookingButton" layoutX="195.0" layoutY="218.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="67.0" style="-fx-background-color: #1c236b;" text="Cancel" textFill="WHITE">
                            <font>
                               <Font name="Book Antiqua" size="13.0" />
                            </font>
