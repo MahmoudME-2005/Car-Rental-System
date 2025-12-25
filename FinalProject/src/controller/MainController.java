@@ -9,7 +9,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import Security.SecurityUtils;
-import model.Customer; //temp
 //import java.io.IOException;
 /**
  * FXML Controller class
@@ -50,11 +49,6 @@ public class MainController extends SceneController {
             stateLabel.setText("Username is already taken");
             stateLabel.setStyle("-fx-text-fill: red");
             stateLabel.setVisible(true);
-        }
-        
-        for (Customer c: DataBase.CustomerDataBase.getCustomers())
-        {
-            System.out.println(c.getUserName());
         }
     }
     
