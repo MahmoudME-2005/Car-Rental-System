@@ -35,4 +35,6 @@ The goal of this project is to demonstrate **Object-Oriented Programming (OOP)**
 
 ## How to Run
 
-Clone the repository:
+Clone the repository by running this command into the terminal:
+`git clone https://github.com/MahmoudME-2005/Car-Rental-System`
+
